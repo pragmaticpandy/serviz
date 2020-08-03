@@ -36,4 +36,27 @@ reflected in the rendered webpage.
    syntax is likely why.
 1. Remember you installed graphviz itself already, so when you are done, it can be used directly to
    export the graph: `dot -T png -o OUTPUT_FILE DOT_FILE`
-1. TODO CoVim usage
+1. For collaborative editing in vim you can use [CoVim](https://github.com/FredKSchott/CoVim).
+   However, CoVim needs vim compiled with Python 2 enabled, which most vim distributions do not. You
+   can either:
+    * Compile vim yourself with something like:
+      ```
+      sudo echo Installing vim...
+      brew install python
+      mkdir -p ~/installs
+      (
+          set -e
+          cd ~/installs
+          rm -rf vim
+          git clone https://github.com/vim/vim.git
+          cd vim
+          make distclean
+          ./configure --enable-pythoninterp --enable-python3interp
+          make
+          sudo make install
+      )
+
+      echo Done.
+      ```
+    * Or install CoVim with an [unmerged branch](https://github.com/makerforceio/CoVim) that
+      migrated to python 3.
