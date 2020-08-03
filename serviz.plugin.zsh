@@ -30,7 +30,7 @@ serviz() (
 
     (browser-sync start --server $site_dir --files $site_dir --no-notify --no-open)&
 
-	fswatch -0 $dot_file | while read -d "" event ; do
+	fswatch -m poll_monitor -0 $dot_file | while read -d "" event ; do
 		build
 	done
 )
