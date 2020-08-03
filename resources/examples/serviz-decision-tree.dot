@@ -1,0 +1,49 @@
+# http://www.graphviz.org/content/cluster
+
+digraph G {
+
+	subgraph cluster_0 {
+		style=filled;
+		color="#dedede";
+		node [style=filled,color=white];
+
+        start [
+            label="Should you\nuse serviz?",
+            shape=circle,
+            color="#98d69b",
+            fixedsize=true,
+            width=1.4];
+
+        # ends
+        {
+            rank=same;
+            node [shape=octagon, regular=true, fixedsize=true, width=1.4, color="#d69898"];
+            no [label="This is the wrong\ntool category."];
+            yes [label="serviz might\nbe useful"];
+            vizjs [label="viz-js.com might\nbe sufficient"];
+        }
+
+        # questions
+        {
+            rank=same;
+            node [shape=diamond, regular=true, fixedsize=true, width=2.5];
+            q1 [label="Do you need an\n environment to view\nrendered graphs as you\nedit your dot files?"]
+            q2 [label="Do you want to use\nyour own editor?"];
+            q3 [label="Do you want to edit\ncollaboratively using\nsomething like CoVim?"];
+            q4 [label="Do you want to more\neasily use version control?"];
+        }
+
+        start -> q1
+        q1 -> q2 [label="Yes"]
+        q1 -> no [label="No"]
+        q2 -> yes [label="Yes"]
+        q2 -> q3 [label="No"]
+        q3 -> yes [label="Yes"]
+        q3 -> q4 [label="No"]
+        q4 -> yes [label="  Yes"]
+        q4 -> vizjs [label="No"]
+	}
+
+}
+
+
