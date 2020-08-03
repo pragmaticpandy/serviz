@@ -5,6 +5,8 @@ possible. Yes, this was developed during the pandemic.
 
 It is written in zsh, and gives you a function to start a server.
 
+![Made with the help of serviz](https://raw.githubusercontent.com/pragmaticpandy/serviz/master/resources/examples/serviz-decision-tree.png)
+
 ## Install
 Dependencies you need, and for each, if you are on MacOS, the simplest way to get them.
 
