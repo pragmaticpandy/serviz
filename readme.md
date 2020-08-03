@@ -13,7 +13,7 @@ Dependencies you need, and for each, if you are on MacOS, the simplest way to ge
 * graphviz
     * `brew install graphviz`
 * browsersync
-    1. Install node.js
+    1. `brew install node`
     1. `npm install -g browser-sync`
 * fswatch
     * `brew install fswatch`
