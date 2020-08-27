@@ -26,6 +26,8 @@ pop `antigen bundle https://github.com/pragmaticpandy/serviz.git` before `antige
 `serviz DOT_FILE` then open the displayed URL. When you make edits to the dot file, they will be
 reflected in the rendered webpage.
 
+`serviz --skeleton` prints out some opinionated skeleton dot code for quickly starting new graphs.
+
 ## Tips
 
 1. In vim You can enable automatic writing to disk as you type with the following command:

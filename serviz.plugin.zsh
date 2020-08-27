@@ -1,10 +1,39 @@
 #!/usr/bin/env zsh
 
 serviz() (
+    if [[ "$1" == "--skeleton" ]]; then
+        cat << EOM
+graph G {
+    edge[dir=forward];
+    node[shape="box", style="filled,rounded", fillcolor=white];
+    rankdir=LR; // left to right
+
+    subgraph cluster_foo {
+        style="filled,rounded";
+        fillcolor="#dedede"; // R #e09d9d O #e0b99d Y #e0da9d G #bbe09d T #9de0c7 B #9dc6e0 P #ba9de0
+        label="Start subgraphs IDs with\n\"cluster\" to make them visible.";
+
+        {
+           rank=same;
+           h [label="Hello,"];
+           e [label="!"];
+        }
+
+        w [label="world"];
+
+        h -- w;
+        w -- e;
+
+    }
+}
+EOM
+	return
+	fi
+
     local dot_file=$1
 
     if [ -z "$dot_file" ]; then
-        echo "You must pass in the dot file."
+        echo "You must specify the dot file path, or --skeleton to print skeleton dot code."
         exit 1
     fi
 
